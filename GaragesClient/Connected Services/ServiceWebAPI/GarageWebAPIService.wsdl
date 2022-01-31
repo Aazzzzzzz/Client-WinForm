@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://web/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="GarageWebAPIService" targetNamespace="http://web/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://10.98.33.79:7001/nhonGarageWS/GarageWebAPIService?xsd=1" namespace="http://web/" />
+    </xsd:schema>
+  </types>
+  <message name="updateOwner">
+    <part name="parameters" element="tns:updateOwner" />
+  </message>
+  <message name="updateOwnerResponse">
+    <part name="parameters" element="tns:updateOwnerResponse" />
+  </message>
+  <message name="garagesDetailsInfo">
+    <part name="parameters" element="tns:garagesDetailsInfo" />
+  </message>
+  <message name="garagesDetailsInfoResponse">
+    <part name="parameters" element="tns:garagesDetailsInfoResponse" />
+  </message>
+  <message name="getFilterInfoTotal">
+    <part name="parameters" element="tns:getFilterInfoTotal" />
+  </message>
+  <message name="getFilterInfoTotalResponse">
+    <part name="parameters" element="tns:getFilterInfoTotalResponse" />
+  </message>
+  <message name="findGarageById">
+    <part name="parameters" element="tns:findGarageById" />
+  </message>
+  <message name="findGarageByIdResponse">
+    <part name="parameters" element="tns:findGarageByIdResponse" />
+  </message>
+  <message name="deleteAllGarages">
+    <part name="parameters" element="tns:deleteAllGarages" />
+  </message>
+  <message name="deleteAllGaragesResponse">
+    <part name="parameters" element="tns:deleteAllGaragesResponse" />
+  </message>
+  <message name="findCarById">
+    <part name="parameters" element="tns:findCarById" />
+  </message>
+  <message name="findCarByIdResponse">
+    <part name="parameters" element="tns:findCarByIdResponse" />
+  </message>
+  <message name="findAllCars">
+    <part name="parameters" element="tns:findAllCars" />
+  </message>
+  <message name="findAllCarsResponse">
+    <part name="parameters" element="tns:findAllCarsResponse" />
+  </message>
+  <message name="updateCar">
+    <part name="parameters" element="tns:updateCar" />
+  </message>
+  <message name="updateCarResponse">
+    <part name="parameters" element="tns:updateCarResponse" />
+  </message>
+  <message name="deleteCarById">
+    <part name="parameters" element="tns:deleteCarById" />
+  </message>
+  <message name="deleteCarByIdResponse">
+    <part name="parameters" element="tns:deleteCarByIdResponse" />
+  </message>
+  <message name="deleteAllCars">
+    <part name="parameters" element="tns:deleteAllCars" />
+  </message>
+  <message name="deleteAllCarsResponse">
+    <part name="parameters" element="tns:deleteAllCarsResponse" />
+  </message>
+  <message name="persistOwner">
+    <part name="parameters" element="tns:persistOwner" />
+  </message>
+  <message name="persistOwnerResponse">
+    <part name="parameters" element="tns:persistOwnerResponse" />
+  </message>
+  <message name="findOwnerById">
+    <part name="parameters" element="tns:findOwnerById" />
+  </message>
+  <message name="findOwnerByIdResponse">
+    <part name="parameters" element="tns:findOwnerByIdResponse" />
+  </message>
+  <message name="findAllOwners">
+    <part name="parameters" element="tns:findAllOwners" />
+  </message>
+  <message name="findAllOwnersResponse">
+    <part name="parameters" element="tns:findAllOwnersResponse" />
+  </message>
+  <message name="findAllGarages">
+    <part name="parameters" element="tns:findAllGarages" />
+  </message>
+  <message name="findAllGaragesResponse">
+    <part name="parameters" element="tns:findAllGaragesResponse" />
+  </message>
+  <message name="updateGarage">
+    <part name="parameters" element="tns:updateGarage" />
+  </message>
+  <message name="updateGarageResponse">
+    <part name="parameters" element="tns:updateGarageResponse" />
+  </message>
+  <message name="persistCar">
+    <part name="parameters" element="tns:persistCar" />
+  </message>
+  <message name="persistCarResponse">
+    <part name="parameters" element="tns:persistCarResponse" />
+  </message>
+  <message name="persistGarage">
+    <part name="parameters" element="tns:persistGarage" />
+  </message>
+  <message name="persistGarageResponse">
+    <part name="parameters" element="tns:persistGarageResponse" />
+  </message>
+  <message name="deleteGarageById">
+    <part name="parameters" element="tns:deleteGarageById" />
+  </message>
+  <message name="deleteGarageByIdResponse">
+    <part name="parameters" element="tns:deleteGarageByIdResponse" />
+  </message>
+  <message name="deleteOwnerById">
+    <part name="parameters" element="tns:deleteOwnerById" />
+  </message>
+  <message name="deleteOwnerByIdResponse">
+    <part name="parameters" element="tns:deleteOwnerByIdResponse" />
+  </message>
+  <message name="getInfoTotal">
+    <part name="parameters" element="tns:getInfoTotal" />
+  </message>
+  <message name="getInfoTotalResponse">
+    <part name="parameters" element="tns:getInfoTotalResponse" />
+  </message>
+  <message name="deleteAllOwners">
+    <part name="parameters" element="tns:deleteAllOwners" />
+  </message>
+  <message name="deleteAllOwnersResponse">
+    <part name="parameters" element="tns:deleteAllOwnersResponse" />
+  </message>
+  <portType name="GarageWebAPI">
+    <operation name="updateOwner">
+      <input wsam:Action="http://web/GarageWebAPI/updateOwnerRequest" message="tns:updateOwner" />
+      <output wsam:Action="http://web/GarageWebAPI/updateOwnerResponse" message="tns:updateOwnerResponse" />
+    </operation>
+    <operation name="garagesDetailsInfo">
+      <input wsam:Action="http://web/GarageWebAPI/garagesDetailsInfoRequest" message="tns:garagesDetailsInfo" />
+      <output wsam:Action="http://web/GarageWebAPI/garagesDetailsInfoResponse" message="tns:garagesDetailsInfoResponse" />
+    </operation>
+    <operation name="getFilterInfoTotal">
+      <input wsam:Action="http://web/GarageWebAPI/getFilterInfoTotalRequest" message="tns:getFilterInfoTotal" />
+      <output wsam:Action="http://web/GarageWebAPI/getFilterInfoTotalResponse" message="tns:getFilterInfoTotalResponse" />
+    </operation>
+    <operation name="findGarageById">
+      <input wsam:Action="http://web/GarageWebAPI/findGarageByIdRequest" message="tns:findGarageById" />
+      <output wsam:Action="http://web/GarageWebAPI/findGarageByIdResponse" message="tns:findGarageByIdResponse" />
+    </operation>
+    <operation name="deleteAllGarages">
+      <input wsam:Action="http://web/GarageWebAPI/deleteAllGaragesRequest" message="tns:deleteAllGarages" />
+      <output wsam:Action="http://web/GarageWebAPI/deleteAllGaragesResponse" message="tns:deleteAllGaragesResponse" />
+    </operation>
+    <operation name="findCarById">
+      <input wsam:Action="http://web/GarageWebAPI/findCarByIdRequest" message="tns:findCarById" />
+      <output wsam:Action="http://web/GarageWebAPI/findCarByIdResponse" message="tns:findCarByIdResponse" />
+    </operation>
+    <operation name="findAllCars">
+      <input wsam:Action="http://web/GarageWebAPI/findAllCarsRequest" message="tns:findAllCars" />
+      <output wsam:Action="http://web/GarageWebAPI/findAllCarsResponse" message="tns:findAllCarsResponse" />
+    </operation>
+    <operation name="updateCar">
+      <input wsam:Action="http://web/GarageWebAPI/updateCarRequest" message="tns:updateCar" />
+      <output wsam:Action="http://web/GarageWebAPI/updateCarResponse" message="tns:updateCarResponse" />
+    </operation>
+    <operation name="deleteCarById">
+      <input wsam:Action="http://web/GarageWebAPI/deleteCarByIdRequest" message="tns:deleteCarById" />
+      <output wsam:Action="http://web/GarageWebAPI/deleteCarByIdResponse" message="tns:deleteCarByIdResponse" />
+    </operation>
+    <operation name="deleteAllCars">
+      <input wsam:Action="http://web/GarageWebAPI/deleteAllCarsRequest" message="tns:deleteAllCars" />
+      <output wsam:Action="http://web/GarageWebAPI/deleteAllCarsResponse" message="tns:deleteAllCarsResponse" />
+    </operation>
+    <operation name="persistOwner">
+      <input wsam:Action="http://web/GarageWebAPI/persistOwnerRequest" message="tns:persistOwner" />
+      <output wsam:Action="http://web/GarageWebAPI/persistOwnerResponse" message="tns:persistOwnerResponse" />
+    </operation>
+    <operation name="findOwnerById">
+      <input wsam:Action="http://web/GarageWebAPI/findOwnerByIdRequest" message="tns:findOwnerById" />
+      <output wsam:Action="http://web/GarageWebAPI/findOwnerByIdResponse" message="tns:findOwnerByIdResponse" />
+    </operation>
+    <operation name="findAllOwners">
+      <input wsam:Action="http://web/GarageWebAPI/findAllOwnersRequest" message="tns:findAllOwners" />
+      <output wsam:Action="http://web/GarageWebAPI/findAllOwnersResponse" message="tns:findAllOwnersResponse" />
+    </operation>
+    <operation name="findAllGarages">
+      <input wsam:Action="http://web/GarageWebAPI/findAllGaragesRequest" message="tns:findAllGarages" />
+      <output wsam:Action="http://web/GarageWebAPI/findAllGaragesResponse" message="tns:findAllGaragesResponse" />
+    </operation>
+    <operation name="updateGarage">
+      <input wsam:Action="http://web/GarageWebAPI/updateGarageRequest" message="tns:updateGarage" />
+      <output wsam:Action="http://web/GarageWebAPI/updateGarageResponse" message="tns:updateGarageResponse" />
+    </operation>
+    <operation name="persistCar">
+      <input wsam:Action="http://web/GarageWebAPI/persistCarRequest" message="tns:persistCar" />
+      <output wsam:Action="http://web/GarageWebAPI/persistCarResponse" message="tns:persistCarResponse" />
+    </operation>
+    <operation name="persistGarage">
+      <input wsam:Action="http://web/GarageWebAPI/persistGarageRequest" message="tns:persistGarage" />
+      <output wsam:Action="http://web/GarageWebAPI/persistGarageResponse" message="tns:persistGarageResponse" />
+    </operation>
+    <operation name="deleteGarageById">
+      <input wsam:Action="http://web/GarageWebAPI/deleteGarageByIdRequest" message="tns:deleteGarageById" />
+      <output wsam:Action="http://web/GarageWebAPI/deleteGarageByIdResponse" message="tns:deleteGarageByIdResponse" />
+    </operation>
+    <operation name="deleteOwnerById">
+      <input wsam:Action="http://web/GarageWebAPI/deleteOwnerByIdRequest" message="tns:deleteOwnerById" />
+      <output wsam:Action="http://web/GarageWebAPI/deleteOwnerByIdResponse" message="tns:deleteOwnerByIdResponse" />
+    </operation>
+    <operation name="getInfoTotal">
+      <input wsam:Action="http://web/GarageWebAPI/getInfoTotalRequest" message="tns:getInfoTotal" />
+      <output wsam:Action="http://web/GarageWebAPI/getInfoTotalResponse" message="tns:getInfoTotalResponse" />
+    </operation>
+    <operation name="deleteAllOwners">
+      <input wsam:Action="http://web/GarageWebAPI/deleteAllOwnersRequest" message="tns:deleteAllOwners" />
+      <output wsam:Action="http://web/GarageWebAPI/deleteAllOwnersResponse" message="tns:deleteAllOwnersResponse" />
+    </operation>
+  </portType>
+  <binding name="GarageWebAPIPortBinding" type="tns:GarageWebAPI">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="updateOwner">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="garagesDetailsInfo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getFilterInfoTotal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findGarageById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteAllGarages">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findCarById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllCars">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateCar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteCarById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteAllCars">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="persistOwner">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findOwnerById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllOwners">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="findAllGarages">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="updateGarage">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="persistCar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="persistGarage">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteGarageById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteOwnerById">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="getInfoTotal">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="deleteAllOwners">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="GarageWebAPIService">
+    <port name="GarageWebAPIPort" binding="tns:GarageWebAPIPortBinding">
+      <soap:address location="http://10.98.33.79:7001/nhonGarageWS/GarageWebAPIService" />
+    </port>
+  </service>
+</definitions>
